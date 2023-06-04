@@ -17,7 +17,7 @@ fun Application.configureRoutingPlayer(player_cgdService: PlayerCgdService){
             call.respond(HttpStatusCode.Created, id)
         }
         // List all player_cgd
-        get("/player_cgd") {
+        get("/player_cgd/") {
             val listTeam = player_cgdService.list()
             call.respond(HttpStatusCode.OK, listTeam)
         }

@@ -52,11 +52,11 @@ fun Application.configureDatabases() {
  * */
 fun Application.connectToPostgres(embedded: Boolean): Connection {
 
-    val url = "127.0.0.1"
+    val url = "localhost"
     val db = "dbcgd"
     val port = "5432"
     val user = "postgres"
-    val pwd = "posgres"
+    val pwd = "142536"
 
     Class.forName("org.postgresql.Driver")
 

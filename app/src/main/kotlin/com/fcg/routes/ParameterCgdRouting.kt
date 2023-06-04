@@ -11,7 +11,7 @@ import io.ktor.server.routing.*
 fun Application.configureRoutingParameter(parameterCgdService: ParameterCgdService){
     routing {
         // Create parameter_cgd
-        post("/parameter_cgd") {
+        post("/parameter_cgd/") {
             val parameter_cgd = call.receive<ParameterCgd>()
             val id = parameterCgdService.create(parameter_cgd)
             call.respond(HttpStatusCode.Created, id)

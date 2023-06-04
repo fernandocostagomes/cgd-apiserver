@@ -11,13 +11,13 @@ import io.ktor.server.routing.*
 fun Application.configureRoutingMatchCgd(matchCgdService: MatchCgdService){
     routing {
         // Create matchCgd
-        post("/matchCgd") {
+        post("/matchCgd/") {
             val matchCgd = call.receive<MatchCgd>()
             val id = matchCgdService.create(matchCgd)
             call.respond(HttpStatusCode.Created, id)
         }
         // List all matchCgd
-        get("/matchCgd") {
+        get("/matchCgd/") {
             val listMatchCgd = matchCgdService.list()
             call.respond(HttpStatusCode.OK, listMatchCgd)
         }

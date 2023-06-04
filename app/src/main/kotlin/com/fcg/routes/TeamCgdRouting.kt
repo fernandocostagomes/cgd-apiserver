@@ -17,7 +17,7 @@ fun Application.configureRoutingTeam(teamCgdService: TeamCgdService){
             call.respond(HttpStatusCode.Created, id)
         }
         // List all teans
-        get("/team_cgd") {
+        get("/team_cgd/") {
             val listTeam = teamCgdService.list()
             call.respond(HttpStatusCode.OK, listTeam)
         }

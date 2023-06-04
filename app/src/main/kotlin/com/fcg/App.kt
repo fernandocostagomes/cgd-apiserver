@@ -9,23 +9,12 @@ import com.fcg.plugins.configureRouting
 import com.fcg.plugins.configureSerialization
 import io.ktor.server.application.*
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
-        }
+fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-    fun initServer(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
-
-    fun Application.module() {
-        configureHTTP()
-        configureSerialization()
-        configureDatabases()
-        configureRouting()
-    }
-
+fun Application.module() {
+    configureHTTP()
+    configureSerialization()
+    configureDatabases()
+    configureRouting()
 }
 
-fun main(args: Array<String>) {
-    App().initServer( args )
-}
